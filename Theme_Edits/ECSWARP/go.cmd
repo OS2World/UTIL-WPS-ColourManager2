@@ -1,0 +1,3 @@
+RC -X2 ECSWARP.RC ECSWARP.DLL
+pause
+

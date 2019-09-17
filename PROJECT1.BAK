@@ -1,0 +1,13 @@
+Program Project1;
+
+Uses
+  Forms, Graphics, Unit1;
+
+{$r Project1.scu}
+
+Begin
+  Application.Create;
+  Application.CreateForm (TForm1, Form1);
+  Application.Run;
+  Application.Destroy;
+End.

@@ -1,0 +1,92 @@
+Unit DEMO_1_DLG;
+
+Interface
+
+Uses
+  Classes, Forms, Graphics, StdCtrls, Buttons;
+
+Type
+  TDemo_1_DLG = Class (TForm)
+    Static: TLabel;
+    Button: TButton;
+    EditBox: TEdit;
+    ListBox1: TListBox;
+    Procedure Demo_1_DLGOnActivate (Sender: TObject);
+    Procedure ListBox1OnClick (Sender: TObject);
+    Procedure MenuItemOnClick (Sender: TObject);
+    Procedure Button1OnClick (Sender: TObject);
+    Procedure Label2OnClick (Sender: TObject);
+    Procedure Label1OnClick (Sender: TObject);
+    Procedure Edit1OnClick (Sender: TObject);
+    Procedure Demo_DLGOnClick (Sender: TObject);
+    Procedure Demo_DLGOnShow (Sender: TObject);
+    Procedure Demo_DLGOnCloseQuery (Sender: TObject; Var CanClose: Boolean);
+  Private
+    {Insert private declarations here}
+  Public
+    {Insert public declarations here}
+  End;
+
+Var
+  Demo_1_DLG: TDemo_1_DLG;
+
+Implementation
+
+Procedure TDemo_1_DLG.Demo_1_DLGOnActivate (Sender: TObject);
+Begin
+  //WinSetFocus(HWND_DESKTOP,Demo_2_DLG.Handle);
+End;
+
+Procedure TDemo_1_DLG.ListBox1OnClick (Sender: TObject);
+Begin
+
+End;
+
+Procedure TDemo_1_DLG.MenuItemOnClick (Sender: TObject);
+Begin
+
+End;
+
+Procedure TDemo_1_DLG.Button1OnClick (Sender: TObject);
+Begin
+
+End;
+
+Procedure TDemo_1_DLG.Label2OnClick (Sender: TObject);
+Begin
+
+End;
+
+Procedure TDemo_1_DLG.Label1OnClick (Sender: TObject);
+Begin
+
+End;
+
+Procedure TDemo_1_DLG.Edit1OnClick (Sender: TObject);
+Begin
+
+End;
+
+Procedure TDemo_1_DLG.Demo_DLGOnClick (Sender: TObject);
+Begin
+
+End;
+
+Procedure TDemo_1_DLG.Demo_DLGOnShow (Sender: TObject);
+Begin
+  moveable:=false;SIZEABLE:=FALSE;
+  left:=120;
+  top:=200;
+  height:=250;
+  width:=250;
+End;
+
+Procedure TDemo_1_DLG.Demo_DLGOnCloseQuery (Sender: TObject;
+  Var CanClose: Boolean);
+Begin
+  //CanClose:=false;
+End;
+
+Initialization
+  RegisterClasses ([TDemo_1_DLG, TLabel, TButton, TEdit, TListBox]);
+End.

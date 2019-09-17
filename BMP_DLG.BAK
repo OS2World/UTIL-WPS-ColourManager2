@@ -1,0 +1,105 @@
+Unit BMP_DLG;
+
+Interface
+
+Uses
+  Classes, Forms, Graphics, StdCtrls, Buttons, ExtCtrls, Dialogs, FileCtrl;
+
+Type
+  TBitmap_DLG = Class (TForm)
+    BITMAPCOMBO: TComboBox;
+    Label1: TLabel;
+    RadioButton1: TRadioButton;
+    RadioButton2: TRadioButton;
+    RadioButton3: TRadioButton;
+    Button1: TButton;
+    Button2: TButton;
+    Panel1: TPanel;
+    Image1: TImage;
+    DirectoryListBox1: TDirectoryListBox;
+    DriveComboBox1: TDriveComboBox;
+    Procedure DriveComboBox1OnChange (Sender: TObject);
+    Procedure DirectoryListBox1OnChange (Sender: TObject);
+    Procedure Button2OnClick (Sender: TObject);
+    Procedure Button1OnClick (Sender: TObject);
+    Procedure BITMAPCOMBOOnChange (Sender: TObject);
+    Procedure RadioButton1OnClick (Sender: TObject);
+    Procedure RadioButton3OnClick (Sender: TObject);
+    Procedure RadioButton2OnClick (Sender: TObject);
+    Procedure Bitmap_DLGOnShow (Sender: TObject);
+  Private
+    {Insert private declarations here}
+  Public
+    {Insert public declarations here}
+  End;
+
+Var
+  Bitmap_DLG: TBitmap_DLG;
+
+Implementation
+
+USES GLOBROUT,sysutils;
+
+Procedure TBitmap_DLG.DriveComboBox1OnChange (Sender: TObject);
+Begin
+  BITMAP_DLG.DirectoryListBox1.drive:=BITMAP_DLG.DriveComboBox1.drive;
+End;
+
+Procedure TBitmap_DLG.DirectoryListBox1OnChange (Sender: TObject);
+VAR BMPS,DLLS:FILEDATAR;
+    GUNKBYTE1:BYTE;
+Begin
+  BITMAPCOMBO.ITEMS.clear; BITMAPCOMBO.text:=''; image1.visible:=false;
+  BMPS:=SYSFILETREE(BITMAP_DLG.DirectoryListBox1.directory+'\*.BMP','F');FOR GUNKBYTE1:=1 TO BMPS.NOSFOUND DO BITMAP_DLG.BITMAPCOMBO.ITEMS.ADD(BMPS.NAME[GUNKBYTE1]);BITMAPCOMBO.ITEMINDEX:=0;
+  if BMPS.NOSFOUND>0 then BITMAP_DLG.image1.visible:=true;
+End;
+
+Procedure TBitmap_DLG.Button2OnClick (Sender: TObject);
+Begin
+  close;
+End;
+
+Procedure TBitmap_DLG.Button1OnClick (Sender: TObject);
+Begin
+
+End;
+
+Procedure TBitmap_DLG.BITMAPCOMBOOnChange (Sender: TObject);
+Begin
+  if fileexists(DirectoryListBox1.directory+'\'+BITMAPCOMBO.TEXT) then begin
+    image1.visible:=true;
+    IMAGE1.BITMAP.LOADFROMFILE(DirectoryListBox1.directory+'\'+BITMAPCOMBO.TEXT);
+  end
+  else image1.visible:=false;
+End;
+
+Procedure TBitmap_DLG.RadioButton1OnClick (Sender: TObject);
+Begin
+  RADIOBUTTON2.CHECKED:=FALSE;
+  RADIOBUTTON3.CHECKED:=FALSE;
+  //BMP_STYLE:=3;
+End;
+
+Procedure TBitmap_DLG.RadioButton3OnClick (Sender: TObject);
+Begin
+  RADIOBUTTON1.CHECKED:=FALSE;
+  RADIOBUTTON2.CHECKED:=FALSE;
+  //BMP_STYLE:=2;
+End;
+
+Procedure TBitmap_DLG.RadioButton2OnClick (Sender: TObject);
+Begin
+  RADIOBUTTON1.CHECKED:=FALSE;
+  RADIOBUTTON3.CHECKED:=FALSE;
+  //BMP_STYLE:=1;
+End;
+
+Procedure TBitmap_DLG.Bitmap_DLGOnShow (Sender: TObject);
+BEGIN
+  //IMAGE1.BITMAP.LOADFROMFILE(BOOTDRIVE+'\OS2\BITMAP\'+BITMAPCOMBO.TEXT);
+End;
+
+Initialization
+  RegisterClasses ([TBitmap_DLG, TComboBox, TLabel, TRadioButton, TButton
+   , TPanel, TImage, TDirectoryListBox, TDriveComboBox]);
+End.

@@ -1,0 +1,703 @@
+Unit MAINWIN_DLG;
+
+Interface
+
+Uses
+  Classes, Forms, StdCtrls, Buttons, ExtCtrls, ComCtrls, Spin, ColorGrd, BmpList,
+  Dialogs, TabCtrls, CustomFontDialog, LED;
+
+Type
+  TMainDLG = Class (TForm)
+    Bevel1: TBevel;
+    Bevel2: TBevel;
+    Bevel3: TBevel;
+    Desktop: TPanel;
+    Image1: TImage;
+    DESKTOPICON: TLabel;
+    CLOSE_BTN: TButton;
+    schemebox: TComboBox;
+    Label1: TLabel;
+    APPLY_BTN: TButton;
+    OK_BTN: TButton;
+    Dialog1: TCustomFontDialog;
+    HELP_CLOSE: TImage;
+    HELP_MIN: TImage;
+    HELP_MAX: TImage;
+    INACTIVE_CLOSE: TImage;
+    INACTIVE_MAX: TImage;
+    Panel1: TPanel;
+    Label2: TLabel;
+    PropertyCombo: TComboBox;
+    MODIFY_BTN: TButton;
+    Label10: TLabel;
+    GroupBox3: TGroupBox;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Led1: TLed;
+    Button23: TButton;
+    Label11: TLabel;
+    Label4: TLabel;
+    Memo1: TMemo;
+    Label12: TLabel;
+    Label13: TLabel;
+    SaveAs_BTN: TButton;
+    Delete_BTN: TButton;
+    Label15: TLabel;
+    Button1: TButton;
+    Notebook1: TNoteBook;
+    GroupBox1: TGroupBox;
+    backclr: TPanel;
+    EditBackClr_BTN: TButton;
+    BITMAP_BTN: TButton;
+    COLOR_RAD: TRadioButton;
+    BMP_RAD: TRadioButton;
+    GroupBox2: TGroupBox;
+    FONT_BTN: TButton;
+    TRANS_CHK: TCheckBox;
+    EditFontClr_BTN: TButton;
+    SampFont: TPanel;
+    Label3: TLabel;
+    ThemeCombo: TComboBox;
+    Label8: TLabel;
+    ComboBox: TComboBox;
+    ComboBox1: TComboBox;
+    Label9: TLabel;
+    BMP_RAD1: TRadioButton;
+    ComboBox4: TComboBox;
+    GroupBox8: TGroupBox;
+    backclr2: TPanel;
+    EditBackClr_BTN2: TButton;
+    Label14: TLabel;
+    CheckBox4: TCheckBox;
+    CheckBox5: TCheckBox;
+    CheckBox6: TCheckBox;
+    CheckBox7: TCheckBox;
+    COLOR_RAD1: TRadioButton;
+    EditBackClr_BTN1: TButton;
+    backclr1: TPanel;
+    GroupBox7: TGroupBox;
+    GroupBox4: TGroupBox;
+    RadioButton3: TRadioButton;
+    Bevel4: TBevel;
+    Button3: TButton;
+    RadioButton4: TRadioButton;
+    Button4: TButton;
+    Button5: TButton;
+    Button6: TButton;
+    ComboBox3: TComboBox;
+    RadioButton5: TRadioButton;
+    Button7: TButton;
+    Image5: TImage;
+    GroupBox5: TGroupBox;
+    CheckBox2: TCheckBox;
+    CheckBox3: TCheckBox;
+    Button8: TButton;
+    Button9: TButton;
+    Button10: TButton;
+    Button11: TButton;
+    GroupBox6: TGroupBox;
+    Button12: TButton;
+    Button13: TButton;
+    Button14: TButton;
+    DIALOG_SYS: TImage;
+    INACTIVE_SYS: TImage;
+    FOLDER_CLOSE: TImage;
+    FOLDER_HIDE: TImage;
+    FOLDER_MAX: TImage;
+    FOLDER_SYS: TImage;
+    RadioButton1: TLabel;
+    RadioButton2: TLabel;
+    CheckBox1: TLabel;
+    RADIO1: TImage;
+    RADIO2: TImage;
+    CHECK1: TImage;
+    APP_WRKSPACE: TPanel;
+    HELP: TPanel;
+    HELP_TEXT: TLabel;
+    LINK_TEXT: TLabel;
+    INACTIVE3_BAR: TPanel;
+    INACTIVE3_TEXT: TLabel;
+    Panel2: TPanel;
+    Image4: TImage;
+    ICONTEXT: TLabel;
+    MENU_1: TPanel;
+    Bevel5: TBevel;
+    MENU_1_1: TLabel;
+    MENU_1_2: TLabel;
+    MENU_2: TPanel;
+    BEVEL6: TBevel;
+    MENU_2_3: TLabel;
+    MENU_2_1: TLabel;
+    MENU_2_2: TLabel;
+    MENU_2_4: TLabel;
+    MENU_2_5: TLabel;
+    MENU_2_HIGH: TShape;
+    INACTIVE2_BAR: TPanel;
+    INACTIVE2_TEXT: TLabel;
+    Image3: TImage;
+    MENU_3: TPanel;
+    MENU_3_1: TLabel;
+    MENU_3_2: TLabel;
+    MENU_3_3: TLabel;
+    MENU_3_HIGH: TShape;
+    DIALOG: TPanel;
+    INACTIVE1_BAR: TPanel;
+    SAMP_BUTTON: TButton;
+    INACTIVE1_TEXT: TLabel;
+    ACTIVE_BAR: TPanel;
+    ACTIVE_TEXT: TLabel;
+    ListBox: TListBox;
+    FOLDER: TPanel;
+    folder_back: TMemo;
+    ENTRYFIELD: TEdit;
+    INACTIVE: TPanel;
+    Image2: TImage;
+    Procedure Button1OnClick (Sender: TObject);
+    Procedure Delete_BTNOnClick (Sender: TObject);
+    Procedure SaveAs_BTNOnClick (Sender: TObject);
+    Procedure INACTIVE_CLOSEOnClick (Sender: TObject);
+    Procedure ThemeComboOnItemSelect (Sender: TObject; Index: LongInt);
+    Procedure ModifyOnClick (Sender: TObject);
+    Procedure Button23OnClick (Sender: TObject);
+    Procedure Image3OnMouseDown (Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X: LongInt; Y: LongInt);
+    Procedure Image2OnMouseDown (Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X: LongInt; Y: LongInt);
+    Procedure APP_WRKSPACEOnClick (Sender: TObject);
+    Procedure DESKTOPICONOnClick (Sender: TObject);
+    Procedure ICONTEXTOnClick (Sender: TObject);
+    Procedure MENU_3_1OnClick (Sender: TObject);
+    Procedure LINK_TEXTOnClick (Sender: TObject);
+    Procedure HELP_TEXTOnClick (Sender: TObject);
+    Procedure DesktopOnClick (Sender: TObject);
+    Procedure ACTIVE_BAROnClick (Sender: TObject);
+    Procedure MENU_1_2OnClick (Sender: TObject);
+    Procedure INACTIVE1_BAROnClick (Sender: TObject);
+    Procedure DIALOGOnClick (Sender: TObject);
+    Procedure ENTRYFIELDOnClick (Sender: TObject);
+    Procedure SAMP_BUTTONOnClick (Sender: TObject);
+    Procedure schemeboxOnItemSelect (Sender: TObject; Index: LongInt);
+    Procedure BMP_RADOnClick (Sender: TObject);
+    Procedure BITMAP_BTNOnClick (Sender: TObject);
+    Procedure FONT_BTNOnClick (Sender: TObject);
+    Procedure OK_BTNONCLICK (Sender: TObject);
+    Procedure APPLY_BTNONCLICK (Sender: TObject);
+    Procedure TRANS_CHKOnClick (Sender: TObject);
+    Procedure COLOR_RADOnClick (Sender: TObject);
+    Procedure MainDLGOnCreate (Sender: TObject);
+    Procedure EditFontClr_BTNOnClick (Sender: TObject);
+    Procedure EditBackClr_BTNOnClick (Sender: TObject);
+    Procedure PropertyComboOnChange (Sender: TObject);
+    Procedure CLOSE_BTNONCLICK (Sender: TObject);
+    Procedure MainDLGOnShow (Sender: TObject);
+  Private
+    {Insert private declarations here}
+  Public
+    {Insert public declarations here}
+  End;
+
+  FUNCTION DUMMY_PREVIEW_MOUNTWINCTRLS(FILENAME:STRING;NEWCOLOR:TCOLOR):BYTE;
+  FUNCTION GET_LIST_ENTRY(NAME:STRING):BYTE;
+Var
+  MainDLG: TMainDLG;
+
+Implementation
+
+// 1. PROGRAM STARTUP ROUTINES                             - PROGRAM STARTUP
+// 2. SCHEME MODIFICATION EVENTS                           - SCHEME DELETE/SAVE BUTTONS AND SCHEME SELECTION COMPONENTS
+// 3. SCHEME SELECTION POINTS ON THE PREVIEW WINDOW        - HOT POINTS IN PREVIEW WINDOW TO SELECT THE SCHEME
+// 4. MAIN WINDOW BUTTON EVENTS                            - BUTTONS TO APPLY, CLOSE AND SAVE PROGRAM
+// 5. WINDOW INTERFACE EVENTS                              - REMAINING EVENTS ON MISC CONTROLS
+// 6. MISC UNIT FUNCTIONS                                  - NON WINDOW BASED FUNCTIONS
+
+USES GLOBROUT,CLR_CHG_Wait_DLG,REG_NAG_DLG,GRAPHICS,PMWIN,SYSUTILS,DOS,BSEDOS;
+
+//##################################################################################################################################################################
+// 1. PROGRAM STARTUP ROUTINES
+//##################################################################################################################################################################
+
+Procedure TMainDLG.MainDLGOnCreate (Sender: Tobject);                                //FORM CREATE
+Begin
+  MAINDLG.WIDTH:=434;                                                                //SET THE DIALOG SIZE TO NON-DEBUG SIZES
+  INIT;                                                                              //INITIALISE THE VARIABLES AND RUN SOME BASIC FUNCTIONS
+  GET_REG_KEY;                                                                       //COLLECT SOME REGISTRY INFORMATION
+End;
+
+Procedure TMainDLG.MainDLGOnShow (Sender: TObject);                                  //FORM SHOW
+VAR ICON:TICON;
+    GUNKBYTE1:BYTE;
+    DLLS:FILEDATAR;
+    rc:longint;
+    GUNKCHAR1:CHAR;
+    GUNKSTR1:STRING;
+Begin
+  IF CHECKREG2<>'Yes' then BEGIN                                                     //CHECK THE REGISTRY KEY - IF IT HAS FAILED, SHOW THE NAG SCREEN
+     RegNag_DLG.KEY.TEXT:=REGCODE;  RegNag_DLG.NAME.TEXT:=FULLNAME;    RegNag_DLG.SHOWMODAL;
+  END;
+
+  IF PARAMCOUNT>0 THEN BEGIN                                                         //IF PARAMETERS ARE GIVEN, THEN PROCESS THEM
+    SWITCHES:=PARAMSTR(1);UPCASESTR(SWITCHES);
+    IF (SWITCHES='-S') {AND (CHECKREG2='Yes') }THEN BEGIN                              //STARTUP CONFIGURATION - RUN SILENT AND APPLY SETTINGS - ONLY RUNS IF THE REGISTRATION KEY IS VERIFIED
+      SILENT:=TRUE;  MOUNT_SCHEME;  GLOBAL_APPLYSCHEME;  HALT;
+    END
+    ELSE IF SWITCHES='-D' THEN DEBUG_WIN_SIZE:=237;                                  //SET THE DEBUG WINDOW PARAMETERS
+  END;
+
+                                                                                        //CHECK TO ENSURE THAT THE IBM RESOURCE COMPILER COMPONENTS ARE INSTALLED
+  IF (FSEARCH('RC.EXE',GetEnv('PATH'))='') OR (FSEARCH('RCPP.ERR',GetEnv('PATH'))='') OR (FSEARCH('RCPP.EXE',GetEnv('PATH'))='') THEN BEGIN
+    WinMessageBox (HWND_DESKTOP, HWND_DESKTOP ,'ColourManager requires the IBM Resource Compiler components to be installed. Please check ColourManager/2 documentation.','ColourManager/2 Error', 0, MB_OK OR MB_ERROR);
+    HALT;
+  END
+  ELSE BEGIN                                                                         //CREATE THE WINDOW CONTROL BITMAP MEMORY AREAS
+    WINCTRL.BOX.CREATE; WINCTRL.SYS.CREATE; WINCTRL.CLOSE.CREATE; WINCTRL.MAX.CREATE; WINCTRL.MIN.CREATE; WINCTRL.HIDE.CREATE;
+                                                                                     //LOAD THE ICONS IN FOR THE DEMO WINDOW DIALOGS
+    ICON.CREATE;ICON.LOADFROMRESOURCEID(100); IMAGE1.ICON:=ICON; ICON.DESTROY;       //DESKTOP ICON
+    ICON.CREATE;ICON.LOADFROMRESOURCEID(101); IMAGE4.ICON:=ICON; ICON.DESTROY;       //FOLDER CONTENTS ICON
+    ICON.CREATE;ICON.LOADFROMRESOURCEID(99); FOLDER_SYS.ICON:=ICON; ICON.DESTROY;    //FOLDER WINDOW LH ICON
+
+    MOUNT_SCHEME;                                                                    //MOUNT THE SCHEME FILE
+
+                                                                                     //POPULATE THE SCHEME LISTBOX
+    FOR GUNKBYTE1:=1 TO SCHEME_COUNT DO SchemeBox.items.add(SCHEME[GUNKBYTE1].NAME); //ADD THE SCHEMES TO THE SCHEME LISTBOX
+                                                                                     //POPULATE THE WINDOW CONTROL THEME LIST BOX
+    DLLS:=SYSFILETREE(CURDIR+'\THEMES\*.DLL','F'); FOR GUNKBYTE1:=1 TO DLLS.NOSFOUND DO ThemeCombo.ITEMS.ADD(COPY(DLLS.NAME[GUNKBYTE1],1,LENGTH(DLLS.NAME[GUNKBYTE1])-4));
+
+    FOR GUNKBYTE1:=1 TO 17 DO PropertyCombo.items.add(CUR_SCHEME.DATA[gunkbyte1].name);  //POPULATE THE SCHEME PROPERTY LISTBOX
+    PropertyCombo.items.add('Window Controls');                                      //FORCE-ADD SOME ADDITIONAL PROPERTIES
+    PROPERTYCOMBO.ITEMINDEX:=11;PROPERTYCOMBO.ITEMINDEX:=0;                          //POPULATE THE PROPERTY LIST BOX
+    CUR_SCHEME:=SCHEME[0];                                                           //SETS THE CURRENT SCHEME AS THE SELECTED SCHEME
+
+    IF SWITCHES='-D' THEN BEGIN
+      PropertyCombo.items.add('Sound Schemes');     PropertyCombo.items.add('Test 1 (Border)');   PropertyCombo.items.add('Test 2(Title)');     PropertyCombo.items.add('Test 3(Button)');
+      PROPERTYCOMBO.ITEMINDEX:=11;PROPERTYCOMBO.ITEMINDEX:=0;                        //POPULATE THE PROPERTY LIST BOX
+    END;
+    startup:=FALSE;                                                                  //RE-ENABLE DEMO WINDOW UPDATES
+
+    SchemeBox.TEXT:=SCHEME[0].NAME; CUR_SCHEME.NAME:=SCHEME[0].NAME;                 //STRANGE BODGE AS VARIABLE IS GETTING MESSED UP!
+    NOTEBOOK1.PAGEINDEX:=0;                                                          //RESET THE PROPERTY PAGE TO THE DEFAULT
+    LABEL15.CAPTION:='Version '+version;
+
+                                                                                     //LOAD UP SOME WINDOW CONTROLS - PROBABLY NOT THE BEST PLACE....
+    ThemeCombo.TEXT:=CUR_SCHEME.WIN_CTRL_DLL;
+    DUMMY_PREVIEW_MOUNTWINCTRLS(CURDIR+'\THEMES\'+ThemeCombo.TEXT+'.DLL',CUR_SCHEME.DATA[1].BACK.COLOR);  //MOUNT THE SCHEME DLLS
+
+    CHANGED:=FALSE; LASTSCHEMENO:=0; SCHEMEAPPLIED:=FALSE;                           //VARIABLE USED TO INDICATE THAT THE CURRENTLY SELECTED SCHEME HAS CHANGED
+
+    PREVIEW_APPLYSCHEME;                                                             //APPLY THE CURRENT SCHEME
+    //MAINDLG.APPLY_BTN.ENABLED:=FALSE;                                                //DISABLE THE APPLY BUTTON
+  END;
+End;
+
+//##################################################################################################################################################################
+// 2. SCHEME MODIFICATION EVENTS
+//##################################################################################################################################################################
+
+Procedure TMainDLG.Delete_BTNOnClick (Sender: TObject);                               //DELETE SCHEME
+VAR GUNKBYTE1:BYTE;
+Begin
+  if messagebox('Are you sure you want to delete the currently selected scheme?',mtconfirmation,mbYesNo)=MRYES then begin
+    GUNKBYTE1:=schemebox.itemindex;
+    FOR GUNKBYTE1:=schemebox.itemindex+1 TO SCHEME_COUNT-1 DO SCHEME[GUNKBYTE1]:=SCHEME[GUNKBYTE1+1];
+    schemebox.ITEMS.delete(schemebox.itemindex);
+    schemebox.TEXT:='';
+    DEC(SCHEME_COUNT);
+    Delete_BTN.ENABLED:=FALSE;
+  end;
+End;
+
+Procedure TMainDLG.SaveAs_BTNOnClick (Sender: TObject);                                //SAVE SCHEME
+VAR RET_TEXT:STRING;
+    ENTRY_NO:BYTE;
+Begin
+  IF SCHEMEBOX.TEXT='' THEN RET_TEXT:=GETSAVENAME(CUR_SCHEME.NAME) ELSE RET_TEXT:=GETSAVENAME(SCHEMEBOX.TEXT);
+  IF RET_TEXT<>'' THEN BEGIN
+    ENTRY_NO:=GET_LIST_ENTRY(RET_TEXT);
+    IF ENTRY_NO<>0 THEN BEGIN  //THE ENTRY ALREADY EXISTS - OVERWRITE!
+      CHANGED:=FALSE;
+      SCHEME[ENTRY_NO]:=CUR_SCHEME;
+      SCHEMEBOX.TEXT:=RET_TEXT;
+      CUR_SCHEME.NAME:=RET_TEXT;
+      SCHEMEBOX.ITEMS[ENTRY_NO-1]:=RET_TEXT;
+    END
+    ELSE BEGIN                 //CREATE A NEW ENTRY
+      CHANGED:=FALSE;
+      INC(SCHEME_COUNT);
+      SCHEME[SCHEME_COUNT]:=CUR_SCHEME;
+      SCHEME[SCHEME_COUNT].NAME:=RET_TEXT;
+      schemebox.ITEMS.ADD(RET_TEXT);
+      SCHEMEBOX.ITEMINDEX:=SCHEME_COUNT-1;
+    END;
+  END;
+End;
+
+Procedure TMainDLG.schemeboxOnItemSelect (Sender: TObject; Index: LongInt);               //EVENT TRIGGERED BY THE CHANGE OF SCHEME
+VAR RC:STRING;
+    GUNKSTR1:STRING;
+Begin
+ IF CHANGED THEN BEGIN
+   IF WinMessageBox (HWND_DESKTOP,MAINDLG.HANDLE,'The current scheme has been modified. Do you wish to save it?','ColourManager/2', 0, MB_YESNO OR MB_QUERY)=MBID_YES THEN BEGIN
+     GUNKSTR1:=SCHEMEBOX.TEXT;  SCHEMEBOX.TEXT:='';
+     SaveAs_BTN.Click;
+     SCHEMEBOX.TEXT:=GUNKSTR1;
+   END;
+ END;
+
+ SCHEMEAPPLIED:=FALSE;
+ schemebox.enabled:=false;
+
+ IF LASTSCHEMENO<>INDEX+1 THEN BEGIN                                                                     //BLOCKS AN UPDATE IF THE SAME ENTRY IS SELECTED
+   Delete_BTN.ENABLED:=TRUE;
+   CHANGED:=FALSE;
+   CUR_SCHEME:=SCHEME[schemebox.ITEMINDEX+1];      LABEL4.CAPTION:=CUR_SCHEME.NAME;                      //MOUNT THE NEW CURRENT SCHEME
+   ThemeCombo.TEXT:=SCHEME[schemebox.ITEMINDEX+1].WIN_CTRL_DLL;                                          //UPDATE THE WINDOW CONTROL THEME NAME
+   DUMMY_PREVIEW_MOUNTWINCTRLS(CURDIR+'\THEMES\'+ThemeCombo.TEXT+'.DLL',CUR_SCHEME.DATA[1].BACK.COLOR);  //RENEW THE WINDOW CONTROLS
+   PROPERTYCOMBO.ITEMINDEX:=11;PROPERTYCOMBO.ITEMINDEX:=0;
+   PREVIEW_APPLYSCHEME;                                                                                  //APPLY THE SCHEME TO THE SYSTEM
+   LASTSCHEMENO:=schemebox.ITEMINDEX+1;
+ END;
+ schemebox.enabled:=true;
+End;
+
+//##################################################################################################################################################################
+// 3. SCHEME SELECTION POINTS ON THE PREVIEW WINDOW
+//##################################################################################################################################################################
+
+Procedure TMainDLG.INACTIVE_CLOSEOnClick (Sender: TObject);
+Begin
+  PropertyCombo.itemindex:=17;
+End;
+
+Procedure TMainDLG.APP_WRKSPACEOnClick (Sender: TObject);
+Begin
+  PropertyCombo.itemindex:=8;
+End;
+
+Procedure TMainDLG.DESKTOPICONOnClick (Sender: TObject);
+Begin
+  PropertyCombo.itemindex:=2;
+End;
+
+Procedure TMainDLG.ICONTEXTOnClick (Sender: TObject);
+Begin
+  PropertyCombo.itemindex:=11;
+End;
+
+Procedure TMainDLG.MENU_3_1OnClick (Sender: TObject);
+Begin
+  PropertyCombo.itemindex:=5;
+End;
+
+Procedure TMainDLG.LINK_TEXTOnClick (Sender: TObject);
+Begin
+  PropertyCombo.itemindex:=16;
+End;
+
+Procedure TMainDLG.HELP_TEXTOnClick (Sender: TObject);
+Begin
+  PropertyCombo.itemindex:=13;
+End;
+
+Procedure TMainDLG.DesktopOnClick (Sender: TObject);
+Begin
+  PropertyCombo.itemindex:=1;
+End;
+
+Procedure TMainDLG.ACTIVE_BAROnClick (Sender: TObject);
+Begin
+  PropertyCombo.itemindex:=6;
+End;
+
+Procedure TMainDLG.MENU_1_2OnClick (Sender: TObject);
+Begin
+  PropertyCombo.itemindex:=4;
+End;
+
+Procedure TMainDLG.INACTIVE1_BAROnClick (Sender: TObject);
+Begin
+  PropertyCombo.itemindex:=7;
+End;
+
+Procedure TMainDLG.DIALOGOnClick (Sender: TObject);
+Begin
+  PropertyCombo.itemindex:=0;
+End;
+
+Procedure TMainDLG.ENTRYFIELDOnClick (Sender: TObject);
+Begin
+  PropertyCombo.itemindex:=9;
+End;
+
+Procedure TMainDLG.SAMP_BUTTONOnClick (Sender: TObject);
+Begin
+  PropertyCombo.itemindex:=14;
+End;
+
+Procedure TMainDLG.Image3OnMouseDown (Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X: LongInt; Y: LongInt);
+Begin
+  if (x>icontext.left+panel2.left) and (x<icontext.left+icontext.width+panel2.left) and (y>icontext.bottom) and (y<image4.bottom+image4.height) then PropertyCombo.itemindex:=11
+  else PropertyCombo.itemindex:=10;
+End;
+
+Procedure TMainDLG.Image2OnMouseDown (Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X: LongInt; Y: LongInt);
+Begin
+  if (x>24) and (x<100) and (y>17) and (y<79) then PropertyCombo.itemindex:=2
+  else PropertyCombo.itemindex:=1;
+End;
+
+//##################################################################################################################################################################
+// 4. MAIN WINDOW BUTTON EVENTS
+//##################################################################################################################################################################
+
+Procedure TMainDLG.ModifyOnClick (Sender: TObject);                                       //MODIFY BUTTON - REVEALS OTHER HALF OF MAIN WINDOW
+Begin
+  IF MODIFY_BTN.CAPTION='Modify>>' then BEGIN  maindlg.width:=maindlg.width+225+DEBUG_WIN_SIZE; MODIFY_BTN.CAPTION:='<<Hide'; END
+  ELSE BEGIN    maindlg.width:=maindlg.width-225-DEBUG_WIN_SIZE; MODIFY_BTN.CAPTION:='Modify>>';  END;
+End;
+
+Procedure TMainDLG.OK_BTNONCLICK (Sender: TObject);                                       //OK BUTTON
+VAR RC:BYTE;
+Begin
+  IF NOT SCHEMEAPPLIED THEN APPLY_BTN.CLICK;
+  SAVESCHEME(SCHEMEBOX.TEXT,SCHEMEBOX.ITEMINDEX+1);
+  RC:=UNMOUNT_SCHEME;
+  HALT;
+End;
+
+Procedure TMainDLG.CLOSE_BTNONCLICK (Sender: TObject);                                    //CANCEL BUTTON
+VAR RC:BYTE;
+    GUNKSTR1:STRING;
+Begin
+ IF CHANGED THEN BEGIN
+   IF WinMessageBox (HWND_DESKTOP,MAINDLG.HANDLE,'The current scheme has been modified. Do you wish to save it?','ColourManager/2', 0, MB_YESNO OR MB_QUERY)=MBID_YES THEN BEGIN
+     GUNKSTR1:=SCHEMEBOX.TEXT;  SCHEMEBOX.TEXT:='';
+     SaveAs_BTN.Click;
+     SCHEMEBOX.TEXT:=GUNKSTR1;
+   END;
+ END;
+
+ RC:=UNMOUNT_SCHEME;
+ HALT;
+end;
+
+Procedure TMainDLG.APPLY_BTNONCLICK (Sender: TObject);                                    //APPLY BUTTON
+VAR RC:INTEGER;
+Begin
+  SCHEMEAPPLIED:=TRUE;APPLY_BTN.ENABLED:=FALSE;
+  SAVESCHEME(SCHEMEBOX.TEXT,SCHEMEBOX.ITEMINDEX+1);
+  RC:=GLOBAL_APPLYSCHEME;
+  IF RC<>0 THEN WinMessageBox (HWND_DESKTOP, HWND_DESKTOP ,'Error during compilation of the resources! The scheme will only be partially applied. Code:'+tostr(rc),'ColourManager/2 Error', 0, MB_OK OR MB_ERROR)
+  ELSE WinMessageBox (HWND_DESKTOP, HWND_DESKTOP ,'ColourManager/2 is currently unable to replace the window controls and dialog backgrounds on-the-fly. Please reboot for the full changes.','ColourManager/2 Warning', 0, MB_OK OR MB_WARNING);
+End;
+
+
+//##################################################################################################################################################################
+// 5. WINDOW INTERFACE EVENTS
+//##################################################################################################################################################################
+
+Procedure TMainDLG.ThemeComboOnItemSelect (Sender: TObject; Index: LongInt);             //SELECTION OF WINDOW THEME CONTROLS EVENT
+Begin
+  if CUR_SCHEME.WIN_CTRL_DLL<>ThemeCombo.TEXT then begin                                 //IF THE BOX HAS CHANGED, THEN APPLY THE SCHEME
+    ThemeCombo.enabled:=false;
+    CHANGED:=true;
+    CUR_SCHEME.WIN_CTRL_DLL:=ThemeCombo.TEXT;
+    DUMMY_PREVIEW_MOUNTWINCTRLS(CURDIR+'\THEMES\'+ThemeCombo.TEXT+'.DLL',CUR_SCHEME.DATA[1].BACK.COLOR);
+    PREVIEW_UPDATEWINCTRLS;
+    ThemeCombo.enabled:=true;
+  end;
+End;
+
+Procedure TMainDLG.BITMAP_BTNOnClick (Sender: TObject);                                   //EVENT TO CAPTURE THE BITMAP BUTTON CLICK
+Begin
+  SELECT_BITMAP:=CUR_SCHEME.DATA[PropertyCombo.itemindex+1].back.BITMAP_PATH;
+  BMP_STYLE:=CUR_SCHEME.DATA[PropertyCombo.itemindex+1].BACK.BMP_STYLE;
+  IF GETBITMAP THEN BEGIN
+    CHANGED:=true;
+    CUR_SCHEME.DATA[MAINDLG.PropertyCombo.itemindex+1].BACK.BITMAP_PATH:=SELECT_BITMAP;
+    CUR_SCHEME.DATA[PropertyCombo.itemindex+1].BACK.BMP_STYLE:=BMP_STYLE;
+    PREVIEW_APPLYSCHEME;
+  END;
+End;
+
+Procedure TMainDLG.FONT_BTNOnClick (Sender: TObject);                                     //EVENT TO CAPTURE THE FONT BITMAP BUTTON CLICK
+Begin
+  dialog1.editfont:=SCREEN.GETFONTFROMPOINTSIZE(CUR_SCHEME.DATA[PropertyCombo.itemindex+1].TEXT.font.NAME,CUR_SCHEME.DATA[PropertyCombo.itemindex+1].TEXT.font.SIZE);
+  if Dialog1.execute then begin
+    CHANGED:=true;
+    CUR_SCHEME.DATA[PropertyCombo.itemindex+1].TEXT.font.NAME:=dialog1.editfont.FACENAME;
+    CUR_SCHEME.DATA[PropertyCombo.itemindex+1].TEXT.font.SIZE:=dialog1.editfont.POINTSIZE;
+    if PropertyCombo.itemindex+1=3 THEN CUR_SCHEME.DATA[12].TEXT.font:=CUR_SCHEME.DATA[3].TEXT.font;
+    if PropertyCombo.itemindex+1=12 THEN CUR_SCHEME.DATA[3].TEXT.font:=CUR_SCHEME.DATA[12].TEXT.font;
+    if PropertyCombo.itemindex+1=8 THEN CUR_SCHEME.DATA[7].TEXT.font:=CUR_SCHEME.DATA[8].TEXT.font;
+    if PropertyCombo.itemindex+1=7 THEN CUR_SCHEME.DATA[8].TEXT.font:=CUR_SCHEME.DATA[7].TEXT.font;
+
+    SampFont.font:=dialog1.editfont;
+    PREVIEW_APPLYSCHEME;
+  end;
+End;
+
+Procedure TMainDLG.TRANS_CHKOnClick (Sender: TObject);                                    //TRANSPARENT CHECKBOX
+Begin
+  {schemebox.TEXT:='';}CHANGED:=true;
+  CUR_SCHEME.DATA[PropertyCombo.itemindex+1].BACK.TRANS:=TRANS_CHK.checked;
+  PREVIEW_APPLYSCHEME;
+End;
+
+Procedure TMainDLG.COLOR_RADOnClick (Sender: TObject);                                    //CHECKBOX USED TO SELECT COLOUR
+Begin
+    EditBackClr_BTN.ENABLED:=(COLOR_RAD.checked) AND (CUR_SCHEME.DATA[PropertyCombo.itemindex+1].BACK_EN);
+    COLOR_RAD.ENABLED:=CUR_SCHEME.DATA[PropertyCombo.itemindex+1].BACK_EN;
+    BITMAP_BTN.ENABLED:=NOT COLOR_RAD.checked;
+    BITMAP_BTN.ENABLED:=NOT COLOR_RAD.checked;
+    CUR_SCHEME.DATA[PropertyCombo.itemindex+1].BACK.BITMAP_USED:=NOT COLOR_RAD.checked;
+    backclr.color:=CUR_SCHEME.DATA[PropertyCombo.itemindex+1].back.color;
+    CHANGED:=true;
+    PREVIEW_APPLYSCHEME;
+End;
+
+Procedure TMainDLG.BMP_RADOnClick (Sender: TObject);                                       //CHECKBOX USED TO SELECT BITMAP
+Begin
+  CUR_SCHEME.DATA[PropertyCombo.itemindex+1].BACK.BITMAP_USED:=NOT COLOR_RAD.checked;
+  SELECT_BITMAP:=EXTRACTFILENAME(CUR_SCHEME.DATA[PropertyCombo.itemindex+1].back.BITMAP_PATH);
+  BMP_STYLE:=CUR_SCHEME.DATA[PropertyCombo.itemindex+1].back.BMP_STYLE;
+  COLOR_RADOnClick(sender);
+  //backclr.COLOR:=MAINDLG.COLOR;
+End;
+
+procedure TMainDLG.EditFontClr_BTNOnClick (Sender: TObject);                               //FONT COLOUR BUTTON
+var newcolor:tcolor;
+    RANGE:BOOLEAN;
+Begin
+  newcolor:=GETCOLORDLG(CUR_SCHEME.DATA[PropertyCombo.itemindex+1].TEXT.color,TRUE);
+  if newcolor<>CUR_SCHEME.DATA[PropertyCombo.itemindex+1].TEXT.color then begin
+    {schemebox.TEXT:='';}CHANGED:=true;
+    CUR_SCHEME.DATA[PropertyCombo.itemindex+1].TEXT.color:=newcolor;
+    SampFont.PENCOLOR:=CUR_SCHEME.DATA[PropertyCombo.itemindex+1].TEXT.color;
+    PREVIEW_APPLYSCHEME;
+  end;
+End;
+
+Procedure TMainDLG.EditBackClr_BTNOnClick (Sender: TObject);                                //BACKGROUND COLOUR BUTTON
+var newcolor:tcolor;
+    RANGE:BOOLEAN;
+Begin
+  IF (PropertyCombo.itemindex=0) or (PropertyCombo.itemindex=14) THEN RANGE:=FALSE ELSE RANGE:=TRUE;
+  newcolor:=GETCOLORDLG(CUR_SCHEME.DATA[PropertyCombo.itemindex+1].back.color,RANGE);
+  if newcolor<>CUR_SCHEME.DATA[PropertyCombo.itemindex+1].back.color then begin
+    {schemebox.TEXT:=''};CHANGED:=true;
+    CUR_SCHEME.DATA[PropertyCombo.itemindex+1].back.color:=newcolor;
+    BACKCLR.COLOR:=newcolor;
+    IF PropertyCombo.itemindex=0 THEN DUMMY_PREVIEW_MOUNTWINCTRLS(CURDIR+'\THEMES\'+ThemeCombo.TEXT+'.DLL',CUR_SCHEME.DATA[1].BACK.COLOR);
+    PropertyComboOnChange(SENDER);
+    PREVIEW_APPLYSCHEME;
+  end;
+End;
+
+Procedure TMainDLG.PropertyComboOnChange (Sender: TObject);                                  //ALLOW SCHEME PROPERTIES TO BE SELECTED
+Begin
+ IF LASTPROPERTYNO<>PropertyCombo.itemindex+1 THEN BEGIN
+   IF PropertyCombo.itemindex>16 THEN BEGIN
+     IF PropertyCombo.itemindex=17 THEN NOTEBOOK1.PAGEINDEX:=1;
+     IF PropertyCombo.itemindex=18 THEN NOTEBOOK1.PAGEINDEX:=2;
+     IF PropertyCombo.itemindex=19 THEN NOTEBOOK1.PAGEINDEX:=3;
+     IF PropertyCombo.itemindex=20 THEN NOTEBOOK1.PAGEINDEX:=4;
+     IF PropertyCombo.itemindex=21 THEN NOTEBOOK1.PAGEINDEX:=5;
+   END
+   ELSE BEGIN
+     NOTEBOOK1.PAGEINDEX:=0;                                                                  //SELECT THE DEFAULT PROPERTY PAGE - NOW POPULATE THE SETTINGS
+     COLOR_RAD.ENABLED:=CUR_SCHEME.DATA[PropertyCombo.itemindex+1].BACK_EN;
+     COLOR_RAD.CHECKED:=NOT CUR_SCHEME.DATA[PropertyCombo.itemindex+1].back.BITMAP_USED;
+     BMP_RAD.CHECKED:=CUR_SCHEME.DATA[PropertyCombo.itemindex+1].back.BITMAP_USED;
+
+     IF BMP_RAD.CHECKED THEN backclr.COLOR:=MAINDLG.COLOR
+     ELSE backclr.color:=CUR_SCHEME.DATA[PropertyCombo.itemindex+1].back.color;
+     IF CUR_SCHEME.DATA[PropertyCombo.itemindex+1].text_en then SampFont.PENCOLOR:=CUR_SCHEME.DATA[PropertyCombo.itemindex+1].text.color else SampFont.PENCOLOR:=maindlg.color;
+
+     BMP_RAD.ENABLED:=CUR_SCHEME.DATA[PropertyCombo.itemindex+1].BACK.BITMAP_EN;
+     BITMAP_BTN.ENABLED:=CUR_SCHEME.DATA[PropertyCombo.itemindex+1].BACK.BITMAP_USED;
+
+     EditBackClr_BTN.ENABLED:=(NOT CUR_SCHEME.DATA[PropertyCombo.itemindex+1].back.BITMAP_USED) AND (CUR_SCHEME.DATA[PropertyCombo.itemindex+1].BACK_EN);
+     backclr.enabled:=EditBackClr_BTN.ENABLED;
+     IF NOT EditBackClr_BTN.ENABLED THEN backclr.COLOR:=MAINDLG.COLOR;
+     EditFontClr_BTN.ENABLED:=CUR_SCHEME.DATA[PropertyCombo.itemindex+1].TEXT_EN;
+
+     FONT_BTN.ENABLED:=CUR_SCHEME.DATA[PropertyCombo.itemindex+1].TEXT.CHNG_FONT;
+     SampFont.ENABLED:=CUR_SCHEME.DATA[PropertyCombo.itemindex+1].TEXT_EN;
+     if SampFont.ENABLED then SampFont.pencolor:=CUR_SCHEME.DATA[PropertyCombo.itemindex+1].TEXT.COLOR else SampFont.pencolor:=SampFont.color;
+     if FONT_BTN.ENABLED then SampFont.font:=SCREEN.GETFONTFROMPOINTSIZE(CUR_SCHEME.DATA[PropertyCombo.itemindex+1].TEXT.FONT.NAME,CUR_SCHEME.DATA[PropertyCombo.itemindex+1].TEXT.FONT.SIZE);
+
+     TRANS_CHK.ENABLED:=CUR_SCHEME.DATA[PropertyCombo.itemindex+1].TEXT_EN;
+     TRANS_CHK.checked:=CUR_SCHEME.DATA[PropertyCombo.itemindex+1].back.trans;
+
+     IF CUR_SCHEME.DATA[PropertyCombo.itemindex+1].TEXT_EN THEN TRANS_CHK.ENABLED:=CUR_SCHEME.DATA[PropertyCombo.itemindex+1].BACK.TRANS_USED;
+
+     IF CUR_SCHEME.DATA[PropertyCombo.itemindex+1].back.BITMAP_USED THEN begin
+       SELECT_BITMAP:=EXTRACTFILENAME(CUR_SCHEME.DATA[PropertyCombo.itemindex+1].back.BITMAP_PATH);
+       BMP_STYLE:=CUR_SCHEME.DATA[PropertyCombo.itemindex+1].back.BMP_STYLE;
+     END;
+   END;
+   LASTPROPERTYNO:=PropertyCombo.itemindex+1;
+ END;
+End;
+
+//TEST STUFF
+
+Procedure TMainDLG.Button23OnClick (Sender: TObject);
+VAR GUNKLONG1:LONGWORD;
+Begin
+  GUNKLONG1:=WINADDATOM(WinQuerySystemAtomTable,'C:\OS2\BITMAP\LKUPBGND.BMP,T,,I,');
+  WinSENDMsg(HWND_DESKTOP,$045C,6,MPFROM2SHORT(GUNKLONG1,0));
+  WINDELETEATOM(WinQuerySystemAtomTable,GUNKLONG1);
+  IF WinBroadcastMsg(HWND_DESKTOP,$045C,7,0,BMSG_SEND|BMSG_DESCENDANTS) THEN BUTTON23.CAPTION:='OK' ELSE BUTTON23.CAPTION:='ERROR';
+End;
+
+USES inifiles;
+
+Procedure TMainDLG.Button1OnClick (Sender: TObject);
+VAR ini:TIniFile;
+Begin
+  ini.create('D:\APPS\PMMAIL2K\PMMAIL.INI');
+  ini.writeSTRING('GLOBAL','FOLDBACKRGB',TCOLORTORGBSTRING(CUR_SCHEME.DATA[1].BACK.COLOR));         //     B G R        // FOLDER CONTENTS
+  ini.writeSTRING('GLOBAL','COMPCBACKRGB',TCOLORTORGBSTRING(CLLIME));         //     B G R       // ????
+  ini.writeSTRING('GLOBAL','COMPCFORERGB',TCOLORTORGBSTRING(CLLIME));         //     B G R       // ????
+  ini.writeSTRING('GLOBAL','MESSBACKRGB',TCOLORTORGBSTRING(CUR_SCHEME.DATA[1].BACK.COLOR));         //     B G R        // lIST BOX BACK
+  ini.writeSTRING('GLOBAL','MLEBACKRGB',TCOLORTORGBSTRING(CUR_SCHEME.DATA[1].BACK.COLOR));       //  B G R               // MESSAGE PANE
+  ini.writeSTRING('GLOBAL','READCBACKRGB',TCOLORTORGBSTRING(CUR_SCHEME.DATA[10].BACK.COLOR));         //     B G R       // FROM & BY ENTRY BOXES
+  ini.writeSTRING('GLOBAL','STATUSBACKRGB',TCOLORTORGBSTRING(CUR_SCHEME.DATA[1].BACK.COLOR));         //     B G R      // STATUS BARS
+  ini.destroy;
+End;
+
+
+
+//##################################################################################################################################################################
+// 6. MISC UNIT FUNCTIONS
+//##################################################################################################################################################################
+
+FUNCTION DUMMY_PREVIEW_MOUNTWINCTRLS(FILENAME:STRING;NEWCOLOR:TCOLOR):BYTE;
+BEGIN
+  INC(WINDOW_CTRL_UPDATES);
+  MAINDLG.LABEL12.CAPTION:=TOSTR(WINDOW_CTRL_UPDATES);
+  RESULT:=PREVIEW_MOUNTWINCTRLS(FILENAME,NEWCOLOR);
+END;
+
+
+FUNCTION GET_LIST_ENTRY(NAME:STRING):BYTE;
+VAR I,FOUND:BYTE;
+    GUNKSTR1:STRING;
+Begin
+  FOUND:=0;UPCASESTR(NAME);
+  FOR I:=0 TO MainDLG.SCHEMEBOX.ITEMS.COUNT-1 DO BEGIN
+    GUNKSTR1:=MainDLG.SCHEMEBOX.ITEMS[I];UPCASESTR(GUNKSTR1);
+    IF GUNKSTR1=NAME THEN FOUND:=I+1;
+  END;
+  RESULT:=FOUND;
+End;
+
+
+
+Initialization
+  RegisterClasses ([TMainDLG, TLabel, TButton, TBevel,TPanel, TImage,TComboBox,TEdit, TCustomFontDialog,TShape, TMemo, TListBox, TGroupBox,
+    TLed, TNoteBook, TRadioButton, TCheckBox]);
+End.

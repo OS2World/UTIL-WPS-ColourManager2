@@ -1,0 +1,46 @@
+Unit DEMO_2_DLG;
+
+Interface
+
+Uses
+  Classes, Forms, Graphics, StdCtrls, ExtCtrls, ListView;
+
+Type
+  TDemo_2_DLG = Class (TForm)
+    Image1: TImage;
+    ICONTEXT: TLabel;
+    Image2: TImage;
+    Procedure ICONTEXTOnClick (Sender: TObject);
+    Procedure Demo1_DLGOnShow (Sender: TObject);
+  Private
+    {Insert private declarations here}
+  Public
+    {Insert public declarations here}
+  End;
+
+Var
+  Demo_2_DLG: TDemo_2_DLG;
+
+Implementation
+
+Procedure TDemo_2_DLG.ICONTEXTOnClick (Sender: TObject);
+Begin
+
+End;
+
+Procedure TDemo_2_DLG.Demo1_DLGOnShow (Sender: TObject);
+VAR ICON:TICON;
+Begin
+  moveable:=false;SIZEABLE:=FALSE;
+  left:=230;
+  top:=20;
+  height:=130;
+  width:=150;
+  ICON.CREATE;ICON.LOADFROMRESOURCEID(100);
+  IMAGE1.ICON:=ICON;
+  ICON.DESTROY;
+End;
+
+Initialization
+  RegisterClasses ([TDemo_2_DLG, TImage, TLabel]);
+End.

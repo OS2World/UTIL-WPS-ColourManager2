@@ -1,0 +1,42 @@
+Unit Wait_DLG;
+
+Interface
+
+Uses
+  Classes, Forms, Graphics, ComCtrls, StdCtrls, Buttons;
+
+Type
+  TWaitScr_DLG = Class (TForm)
+    ProgressBar1: TProgressBar;
+    Label1: TLabel;
+    Button1: TButton;
+    Procedure WaitScr_DLGOnShow (Sender: TObject);
+    Procedure Button1OnClick (Sender: TObject);
+  Private
+    {Insert private declarations here}
+  Public
+    {Insert public declarations here}
+  End;
+
+Var
+  WaitScr_DLG: TWaitScr_DLG;
+
+Implementation
+
+Procedure TWaitScr_DLG.WaitScr_DLGOnShow (Sender: TObject);
+Begin
+  width:=screen.width;
+  height:=screen.height+30;
+  left:=0;
+  top:=-30;
+
+End;
+
+Procedure TWaitScr_DLG.Button1OnClick (Sender: TObject);
+Begin
+  close;
+End;
+
+Initialization
+  RegisterClasses ([TWaitScr_DLG, TProgressBar, TLabel, TButton]);
+End.

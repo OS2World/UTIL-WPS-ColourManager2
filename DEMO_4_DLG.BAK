@@ -1,0 +1,35 @@
+Unit DEMO_4_DLG;
+
+Interface
+
+Uses
+  Classes, Forms, Graphics, StdCtrls;
+
+Type
+  TDemo_4_DLG = Class (TForm)
+    HELPTEXT: TLabel;
+    HELPLINK: TLabel;
+    Procedure Demo_4_DLGOnShow (Sender: TObject);
+  Private
+    {Insert private declarations here}
+  Public
+    {Insert public declarations here}
+  End;
+
+Var
+  Demo_4_DLG: TDemo_4_DLG;
+
+Implementation
+
+Procedure TDemo_4_DLG.Demo_4_DLGOnShow (Sender: TObject);
+Begin
+  moveable:=false;SIZEABLE:=FALSE;
+  left:=40;
+  top:=80;
+  height:=80;
+  width:=130;
+End;
+
+Initialization
+  RegisterClasses ([TDemo_4_DLG, TLabel]);
+End.

@@ -1,0 +1,3 @@
+
+RC -X2 WARP4.RC WARP4.DLL
+

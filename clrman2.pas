@@ -1,0 +1,44 @@
+Program ClrMan2;
+
+Uses
+  Forms, Graphics, CLR_CHG_Wait_DLG, MAINWIN_DLG, SCHEMESAV_DLG, CLRSEL_DLG, BMP_DLG,Reg_Nag_DLG;
+
+{$r CLRMAN2.scu}
+{$r RESOURCES\ICONS.SRF}
+{$r ENGLISH.SRF}
+
+Begin
+  Application.Create;
+  Application.CreateForm (TMainDLG, MainDLG);
+  Application.Run;
+  Application.Destroy;
+End.
+
+{Version History
+
+1.1b  - First public beta release
+1.11b - Sorted out problem with unregistered user getting nagged too many times - now prompts the user for a registration code and then goes away.
+
+
+
+
+}
+{ Bug Lists....
+
+* Fails to set the icon text correctly.
+* Unable to get the control IDs of the scroll bars in the listboxes
+
+
+
+ DETAILS ON THE UNITS INVOLVED
+
+ > MAINWIN_DLG      = MAIN WINDOW ROUTINES
+ > CLRSEL_DLG       = COLOUR SELECTION DIALOG
+ > CLR_CHG_WAIT_DLG = COVER-SCREEN DIALOG BOX TO MASK DESKTOP CHANGES
+ > GLOBROUT         = GLOBAL ROUTINES
+ > SCHEME_SAV_DLG   = SCHEME SAVING DIALOG
+ > BMP_DLG          = BITMAP SELECTION DIALOG
+ > REG_NAG_DLG      = REGISTRATION NAG DIALOG
+
+
+ }

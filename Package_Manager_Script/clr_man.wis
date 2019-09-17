@@ -1,0 +1,47 @@
+<WARPIN>
+OS=OS2_4x
+<HEAD>
+<PCK INDEX=1
+     PACKAGEID="CastleSoft\Dialog Enhancer\ColourManager2\1\1\1"
+     TARGET="$(WARPIN_DEFAULTAPPSPATH)\ClrMan2"
+     TITLE="ColourManager2"
+     NODESELECT
+     CREATEOBJECT="REPLACE WPProgram|ColourManager2|<WP_CONFIG>|EXENAME=$(1)\clrman2.EXE;OBJECTID=<ColourManager>;"
+     >ColourManager2 by CastleSoft</PCK>
+</HEAD>
+<!-- Here come the different pages. They are linked by
+     the <NEXTBUTTON> tags, which must have a target.
+     Each page must have a TYPE= attribute, which tells
+     WarpIn what will be visible on that page. -->
+<BODY>
+<!-- page 1: introductory page -->
+<PAGE INDEX=1 TYPE=TEXT>
+<NEXTBUTTON TARGET=2>~Next</NEXTBUTTON>
+<TEXT>
+Welcome to Dialog Enhancer's ColourManager2!
+
+This will install ColourManager2 on your system.
+
+A program icon will be created in the "System Setup" folder.
+
+On the following page, please confirm the folder to be installed to.
+
+Select "Next" to continue.
+Select "Cancel" to abort installation.</TEXT>
+</PAGE>
+<!-- The TYPE=CONTAINER will list the packages which can be installed. -->
+<PAGE INDEX=2 TYPE=CONTAINER>
+<NEXTBUTTON TARGET=3>~Next</NEXTBUTTON>
+<TEXT>
+On this page, you may deselect the package if it is already installed or change the package's target path. </TEXT>
+</PAGE>
+<!-- Display another TEXT page to inform the user
+        that installation will begin. We use the TARGET=0
+        with the NEXTBUTTON tag which starts installation. -->
+<PAGE INDEX=3 TYPE=TEXT>
+<NEXTBUTTON TARGET=0>I~nstall</NEXTBUTTON>
+<TEXT>
+Press "Install" to begin installing this archive.</TEXT>
+</PAGE>
+</BODY>
+</WARPIN>

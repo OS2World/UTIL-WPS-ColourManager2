@@ -1,0 +1,68 @@
+#include <os2.h>
+
+BITMAP 25  res35342.bmp
+
+BITMAP 26  res57967.bmp
+
+BITMAP 27  res57968.bmp
+
+BITMAP 28  res57969.bmp
+
+BITMAP 29  res22492.bmp
+
+BITMAP 30  res22493.bmp
+
+BITMAP 31  res22494.bmp
+
+BITMAP 32  res22495.bmp
+
+BITMAP 33  res22496.bmp
+
+BITMAP 34  res22497.bmp
+
+BITMAP 35  res87017.bmp
+
+BITMAP 36  res87018.bmp
+
+BITMAP 37  res87019.bmp
+
+BITMAP 38  res87020.bmp
+
+BITMAP 39  res87021.bmp
+
+BITMAP 40  res87022.bmp
+
+BITMAP 41  res87023.bmp
+
+BITMAP 42  res51542.bmp
+
+BITMAP 43  res51543.bmp
+
+BITMAP 44  res51544.bmp
+
+BITMAP 45  res51545.bmp
+
+BITMAP 46  res51546.bmp
+
+BITMAP 47  res51547.bmp
+
+BITMAP 48  res51548.bmp
+
+BITMAP 50  res51549.bmp
+
+BITMAP 51  res51550.bmp
+
+BITMAP 52  res51551.bmp
+
+BITMAP 53  res51552.bmp
+
+BITMAP 54  res16067.bmp
+
+BITMAP 55  res16068.bmp
+
+BITMAP 56  res16069.bmp
+
+BITMAP 57  res16070.bmp
+
+
+
